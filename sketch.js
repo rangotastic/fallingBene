@@ -43,7 +43,7 @@ class Schneeflocke {
   }
   display() {
 
-    image(bene, this.x, -this.y, this.d, this.d)
+    image(bene, this.x, this.y, this.d, -this.d)
     // noStroke();
     // fill(255);
     // rect(this.x, this.y, this.d, this.d, this.d / 2)
