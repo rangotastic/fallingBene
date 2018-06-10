@@ -40,7 +40,7 @@ class Schneeflocke {
     this.factor = 1;
   }
   display() {
-    "display" isr unser Name der Variable
+    // "display" isr unser Name der Variable
     image(bene, this.x, this.y, this.d, this.d)
     // noStroke();
     // fill(255);
