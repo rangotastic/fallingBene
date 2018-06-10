@@ -11,7 +11,7 @@ function setup() {
 
 
 
-  for (let i = 0; i < 50; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
     //Schneeflocke anfügen (100 mal)
     flocken.push(new Schneeflocke());
   }
@@ -20,13 +20,13 @@ function setup() {
 function draw() {
   background(106,213,229);
 
-  for (let i = 0; i < 50; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
     flocken[i].move();
     flocken[i].display();
     flocken[i].melt();
     flocken[i].reset();
   }
-	snowman(width/2,height-height/9,height/7);
+	snowman(width/2,height-height/9,height/4);
 }
 
 
@@ -36,7 +36,7 @@ class Schneeflocke {
     //"constructor" von JS vorgegeben
     this.x = random(0, width);
     this.y = random(-height,-width/10)
-    this.d = random(width / 20, width / 10);
+    this.d = random(width / 40, width / 20);
     this.speed = random(0.5, 1.5);
     this.versatz = random(0, 200);
     this.factor = 1;
@@ -68,7 +68,7 @@ class Schneeflocke {
 
   reset() {
     if (this.d <= 0) {
-      this.d = random(width/20, width/10);
+      this.d = random(width/40, width/20);
       this.y = -width / 10;
       this.factor = 1;
       this.speed = random(0.5, 1.5);
