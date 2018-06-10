@@ -78,8 +78,9 @@ class Schneeflocke {
 function snowman(x,y,d){
 	noStroke();
 	fill(255);
-	rect(x,y,d,d,d/2);
-	rect(x+d/6,y-d/2.5,d/3*2,d/3*2,d/3);
 	rect(x+d/4,y-d/1.4,d/2,d/2,d/4);
 	image(bene,x+d/4,y-d/1.4,d/2,d/2);
+	rect(x+d/6,y-d/2.5,d/3*2,d/3*2,d/3);
+	rect(x,y,d,d,d/2);
+
 }
