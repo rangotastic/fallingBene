@@ -3,7 +3,7 @@ let flocken = [];
 let bene
 
 function preload(){
-	bene = loadImage("/Bene.png");
+	bene = loadImage("src/Arne_3.png");
 }
 
 function setup() {
