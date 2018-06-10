@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(41, 127, 98);
+  background(106,213,229);
 
   for (let i = 0; i < 50; i += 1) {
     flocken[i].move();
@@ -26,7 +26,9 @@ function draw() {
     flocken[i].melt();
     flocken[i].reset();
   }
+	snowman(width/2,height-height/9,height/7);
 }
+
 
 //Bauplan für eine Schneeflocke
 class Schneeflocke {
@@ -40,7 +42,7 @@ class Schneeflocke {
     this.factor = 1;
   }
   display() {
-    // "display" isr unser Name der Variable
+
     image(bene, this.x, this.y, this.d, this.d)
     // noStroke();
     // fill(255);
@@ -72,4 +74,12 @@ class Schneeflocke {
       this.speed = random(0.5, 1.5);
     }
   }
+}
+function snowman(x,y,d){
+	noStroke();
+	fill(255);
+	rect(x,y,d,d,d/2);
+	rect(x+d/6,y-d/2.5,d/3*2,d/3*2,d/3);
+	rect(x+d/4,y-d/1.4,d/2,d/2,d/4);
+	image(bene,x+d/4,y-d/1.4,d/2,d/2);
 }
