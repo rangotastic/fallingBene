@@ -51,7 +51,7 @@ class Schneeflocke {
     this.x += sin((frameCount + this.versatz) / 15) / (this.d / 2) * this.factor;
   }
   melt() {
-    if (this.y >= height) {
+    if (this.y-this.d >= height) {
       this.speed = 0;
       this.factor = 0;
       this.d -= 0.1;
