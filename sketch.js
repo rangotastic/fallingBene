@@ -9,10 +9,7 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  //flocke = new Schneeflocke();
-  // flocken.push(new Schneeflocke());
-  // flocken.push(new Schneeflocke());
-  // flocken.push(new Schneeflocke());
+
 
   for (let i = 0; i < 50; i += 1) {
     //Schneeflocke anfügen (100 mal)
@@ -21,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(66, 204, 175);
+  background(41, 127, 98);
 
   for (let i = 0; i < 50; i += 1) {
     flocken[i].move();
@@ -36,37 +33,41 @@ class Schneeflocke {
   constructor() {
     //"constructor" von JS vorgegeben
     this.x = random(0, width);
-    this.y = -150;
+    this.y = random(-height,-width/10)
     this.d = random(width / 20, width / 10);
     this.speed = random(0.5, 1.5);
     this.versatz = random(0, 200);
     this.factor = 1;
   }
   display() {
-    //"display" isr unser Name der Variable
+    "display" isr unser Name der Variable
     image(bene, this.x, this.y, this.d, this.d)
     // noStroke();
-    // fill(0);
-    // ellipse(this.x, this.y, this.d)
+    // fill(255);
+    // rect(this.x, this.y, this.d, this.d, this.d / 2)
   }
 
   move() {
     this.y += this.speed;
-    this.x += sin((frameCount + this.versatz) / 15) / (this.d / 2) * this.factor;
+    this.x += sin((frameCount + this.versatz) / 15) * (width / 1000) * this.factor;
   }
 
   melt() {
-    if (this.y >= height - this.d / 2) {
+    if (this.y + width / 40 >= height) {
+
       this.speed = 0;
       this.factor = 0;
-      this.d -= 0.1;
+      this.d -= width / 9800;
+      this.x += width / 19600;
+      this.y += width / 19600;
+
     }
   }
 
   reset() {
     if (this.d <= 0) {
-      this.d = random(25, 100);
-      this.y = -100;
+      this.d = random(width/20, width/10);
+      this.y = -width / 10;
       this.factor = 1;
       this.speed = random(0.5, 1.5);
     }
