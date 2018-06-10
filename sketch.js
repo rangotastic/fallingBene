@@ -21,9 +21,9 @@ function setup() {
 }
 
 function draw() {
-  background(100, 118, 135);
+  background(66, 204, 175);
 
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 200; i += 1) {
     flocken[i].move();
     flocken[i].display();
     flocken[i].melt();
@@ -36,8 +36,8 @@ class Schneeflocke {
   constructor() {
     //"constructor" von JS vorgegeben
     this.x = random(0, width);
-    this.y = -50;
-    this.d = random(50,75);
+    this.y = -150;
+    this.d = random(25,200);
     this.speed = random(0.5, 1.5);
     this.versatz = random(0, 200);
     this.factor = 1;
@@ -51,7 +51,7 @@ class Schneeflocke {
     this.x += sin((frameCount + this.versatz) / 15) / (this.d / 2) * this.factor;
   }
   melt() {
-    if (this.y-this.d >= height) {
+    if (this.y+this.d >= height) {
       this.speed = 0;
       this.factor = 0;
       this.d -= 0.1;
@@ -59,8 +59,8 @@ class Schneeflocke {
   }
   reset() {
     if (this.d <= 0) {
-      this.d = random(5, 11);
-      this.y = -50;
+      this.d = random(25, 100);
+      this.y = -100;
       this.factor = 1;
       this.speed = random(0.5, 1.5);
     }
