@@ -50,14 +50,14 @@ class Schneeflocke {
     this.speed = random(0.5, 1.5);
     this.versatz = random(0, 200);
     this.factor = 1;
-    this.picture = random(0,1);
+    this.picture = random(0, 1);
   }
   display() {
-    if (this.picture >=0.5){
-    image(max, this.x, this.y, this.d, -this.d);
-  }else{
-    image(yazmin, this.x, this.y, this.d, -this.d);
-  }
+    if (this.picture >= 0.5) {
+      image(max, this.x, this.y, this.d, -this.d);
+    } else {
+      image(yazmin, this.x, this.y, this.d, -this.d);
+    }
     // noStroke();
     // fill(255);
     // rect(this.x, this.y, this.d, this.d, this.d / 2)
@@ -69,7 +69,7 @@ class Schneeflocke {
   }
 
   melt() {
-    if (this.y  >= height) {
+    if (this.y >= height) {
 
       this.speed = 0;
       this.factor = 0;
@@ -95,14 +95,14 @@ function snowman(x, y, d) {
   fill(255);
 
   // rect(x, y, d, d, d / 2);
-	// rect(x + d / 6, y - d / 2.5, d / 3 * 2, d / 3 * 2, d / 3);
+  // rect(x + d / 6, y - d / 2.5, d / 3 * 2, d / 3 * 2, d / 3);
   // rect(x + d / 4, y - d / 1.4, d / 2, d / 2, d / 4);
   // image(bene, x + d / 4, y - d / 1.4, d / 2, d / 2);
-  ellipse(x,y-d/3,d);
-  ellipse(x,y-d,d/1.5);
-  image(bene,x-d/6,y-d-d/1.125,d/3,d/3);
+  ellipse(x, y - d / 3, d);
+  ellipse(x, y - d, d / 1.5);
+  image(bene, x - d / 6, y - d - d / 3, d / 3, -d / 3);
   fill(0);
-  ellipse(x,y-d/1.5,d/20);
-  ellipse(x,y-d/3,d/20);
-  ellipse(x,y+d/1.5,d/20);
+  ellipse(x, y - d / 1.5, d / 20);
+  ellipse(x, y - d / 3, d / 20);
+  ellipse(x, y - d + d / 1.5, d / 20);
 }
