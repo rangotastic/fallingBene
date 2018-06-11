@@ -7,7 +7,7 @@ let yazmin;
 function preload() {
   bene = loadImage("src/bene.png");
   max = loadImage("src/max.png");
-  yazmin = loadImage("src/max.png");
+  yazmin = loadImage("src/yazmin.png");
 }
 
 function setup() {
