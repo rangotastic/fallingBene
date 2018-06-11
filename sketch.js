@@ -1,9 +1,13 @@
 //eine leere Liste mit dem Namen flocken
 let flocken = [];
-let bene
+let bene;
+let max;
+let yazmin;
 
 function preload() {
   bene = loadImage("src/bene.png");
+  max = loadImage("src/max.png");
+  yazmin = loadImage("src/max.png");
 }
 
 function setup() {
@@ -40,10 +44,14 @@ class Schneeflocke {
     this.speed = random(0.5, 1.5);
     this.versatz = random(0, 200);
     this.factor = 1;
+    this.picture = random(0,1);
   }
   display() {
-
-    image(bene, this.x, this.y, this.d, -this.d)
+    if (this.picture >=0.5){
+    image(max, this.x, this.y, this.d, -this.d);
+  }else{
+    image(yazmin, this.x, this.y, this.d, -this.d);
+  }
     // noStroke();
     // fill(255);
     // rect(this.x, this.y, this.d, this.d, this.d / 2)
