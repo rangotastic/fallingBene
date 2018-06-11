@@ -24,13 +24,19 @@ function setup() {
 function draw() {
   background(106, 213, 229);
 
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 49; i += 1) {
     flocken[i].move();
     flocken[i].display();
     flocken[i].melt();
     flocken[i].reset();
   }
   snowman(width / 2, height - height / 9, height / 4);
+  for (let i = 50; i < 100; i += 1) {
+    flocken[i].move();
+    flocken[i].display();
+    flocken[i].melt();
+    flocken[i].reset();
+  }
 }
 
 
