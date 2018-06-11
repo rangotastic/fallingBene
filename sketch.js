@@ -30,7 +30,7 @@ function draw() {
     flocken[i].melt();
     flocken[i].reset();
   }
-  snowman(width / 2, height - height / 9, height / 4);
+  snowman(width / 1.5, height, height / 4);
   for (let i = 50; i < 100; i += 1) {
     flocken[i].move();
     flocken[i].display();
@@ -94,8 +94,11 @@ function snowman(x, y, d) {
 
   fill(255);
 
-  rect(x, y, d, d, d / 2);
-	rect(x + d / 6, y - d / 2.5, d / 3 * 2, d / 3 * 2, d / 3);
-  rect(x + d / 4, y - d / 1.4, d / 2, d / 2, d / 4);
-  image(bene, x + d / 4, y - d / 1.4, d / 2, d / 2);
+  // rect(x, y, d, d, d / 2);
+	// rect(x + d / 6, y - d / 2.5, d / 3 * 2, d / 3 * 2, d / 3);
+  // rect(x + d / 4, y - d / 1.4, d / 2, d / 2, d / 4);
+  // image(bene, x + d / 4, y - d / 1.4, d / 2, d / 2);
+  ellipse(x,y-d/3,d);
+  ellipse(x,y-d,d/1.5);
+  image(bene,x-d,y-d-d/3,d/3,d/3);
 }
