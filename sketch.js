@@ -100,7 +100,7 @@ function snowman(x, y, d) {
   // image(bene, x + d / 4, y - d / 1.4, d / 2, d / 2);
   ellipse(x, y - d / 3, d);
   ellipse(x, y - d, d / 1.5);
-  image(bene, x - d / 5.66, y - d - d / 6, d / 2.83, -d / 2.83);
+  image(bene, x - d / 5.66, y - d*2.05 / 6, d / 2.83, -d / 2.83);
   fill(0);
   ellipse(x, y - d / 1.5, d / 20);
   ellipse(x, y - d / 3, d / 20);
