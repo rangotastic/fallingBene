@@ -98,7 +98,7 @@ function snowman(x, y, d) {
   ellipse(x, y - d / 3, d);
   ellipse(x, y - d, d / 1.5);
   //snowman head(picture of Benedikt Kaffai)
-  image(bene, x - d / 5.66, y - d*1.7, d / 2.83, -d / 2.83);
+  image(bene, x - d / 5.66, y - d*1.2, d / 2.83, -d / 2.83);
   fill(0);
   ellipse(x, y - d / 1.5, d / 20);
   ellipse(x, y - d / 3, d / 20);
