@@ -1,5 +1,6 @@
-//eine leere Liste mit dem Namen flocken
-let flocken = [];
+//                        Snowflakes
+//                                               by Yazmin Mendosa & Max O'Dell
+let flake = [];
 let bene;
 let max;
 let yazmin;
@@ -16,41 +17,44 @@ function setup() {
 
 
   for (let i = 0; i < 100; i += 1) {
-    //Schneeflocke anfügen (100 mal)
-    flocken.push(new Schneeflocke());
+    //add 100 flakes to array
+    flake.push(new Snowflake());
   }
 }
 
 function draw() {
   background(106, 213, 229);
-
+//50 flakes behind snowman
   for (let i = 0; i < 49; i += 1) {
-    flocken[i].move();
-    flocken[i].display();
-    flocken[i].melt();
-    flocken[i].reset();
+    flake[i].move();
+    flake[i].display();
+    flake[i].melt();
+    flake[i].reset();
   }
+
   snowman(width / 1.5, height, height / 4);
+
+// 50 flakes in front of snowman
   for (let i = 50; i < 100; i += 1) {
-    flocken[i].move();
-    flocken[i].display();
-    flocken[i].melt();
-    flocken[i].reset();
+    flake[i].move();
+    flake[i].display();
+    flake[i].melt();
+    flake[i].reset();
   }
 }
 
 
-//Bauplan für eine Schneeflocke
-class Schneeflocke {
+
+class Snowflake {
   constructor() {
-    //"constructor" von JS vorgegeben
-    this.x = random(0, width);
-    this.y = random(-height, -width / 10)
-    this.d = random(width / 40, width / 20);
-    this.speed = random(0.5, 1.5);
-    this.versatz = random(0, 200);
-    this.factor = 1;
-    this.picture = random(0, 1);
+
+    this.x = random(0, width); // x-position
+    this.y = random(-height, -width / 10); //y-position
+    this.d = random(width / 40, width / 20); // diametre of flake
+    this.speed = random(0.5, 1.5); // speed of flake
+    this.versatz = random(0, 200); // adds random number to frame-count so flakes don't move synced
+    this.factor = 1; //in order to stop x-movement when ground is hit
+    this.picture = random(0, 1);//decides which portrait is shown in flake
   }
   display() {
     if (this.picture >= 0.5) {
@@ -58,9 +62,7 @@ class Schneeflocke {
     } else {
       image(yazmin, this.x, this.y, this.d, -this.d);
     }
-    // noStroke();
-    // fill(255);
-    // rect(this.x, this.y, this.d, this.d, this.d / 2)
+
   }
 
   move() {
@@ -71,11 +73,11 @@ class Schneeflocke {
   melt() {
     if (this.y >= height) {
 
-      this.speed = 0;
-      this.factor = 0;
-      this.d -= width / 9800;
-      this.x += width / 19600;
-      this.y += width / 19600;
+      this.speed = 0; //no movement in y-direction
+      this.factor = 0; //no movement in x-direction
+      this.d -= width / 9800; //diameter getting smaller
+      this.x += width / 19600; //change x-position since picture is a rectangle
+      this.y += width / 19600; //change y-position since picture is a rectangle
 
     }
   }
@@ -93,13 +95,9 @@ class Schneeflocke {
 function snowman(x, y, d) {
 
   fill(255);
-
-  // rect(x, y, d, d, d / 2);
-  // rect(x + d / 6, y - d / 2.5, d / 3 * 2, d / 3 * 2, d / 3);
-  // rect(x + d / 4, y - d / 1.4, d / 2, d / 2, d / 4);
-  // image(bene, x + d / 4, y - d / 1.4, d / 2, d / 2);
   ellipse(x, y - d / 3, d);
   ellipse(x, y - d, d / 1.5);
+  //snowman head(picture of Benedikt Kaffai)
   image(bene, x - d / 5.66, y - d*2.05 / 6, d / 2.83, -d / 2.83);
   fill(0);
   ellipse(x, y - d / 1.5, d / 20);
